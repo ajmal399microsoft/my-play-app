@@ -180,9 +180,9 @@
       "paid": 0,
       "id": "79a6024b-7228-4f96-a1f2-425ef5711fff",
       "name": "Ajmal",
-      "balance": -1920,
+      "balance": -2880,
       "isAdmin": false,
-      "matchPlayed": 2,
+      "matchPlayed": 3,
       "mobNumber": 0,
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-b55n6Fujlr_OUgWNWDf5k0dJFeEywRQ4Q&usqp=CAU"
     },
@@ -241,6 +241,26 @@
           "balance": -1920,
           "isAdmin": false,
           "matchPlayed": 2,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-b55n6Fujlr_OUgWNWDf5k0dJFeEywRQ4Q&usqp=CAU"
+        }
+      ]
+    },
+    {
+      "id": "346e723d-e405-4920-81b4-604c41ca82b5",
+      "title": "Turf edavannapara play 3",
+      "DateTime": "15-Jul-2022",
+      "cost": "960",
+      "Description": "2022-07-15T10:56:53.513Z",
+      "Tag": "Paid play",
+      "players": [
+        {
+          "paid": 0,
+          "id": "79a6024b-7228-4f96-a1f2-425ef5711fff",
+          "name": "Ajmal",
+          "balance": -2880,
+          "isAdmin": false,
+          "matchPlayed": 3,
           "mobNumber": 0,
           "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-b55n6Fujlr_OUgWNWDf5k0dJFeEywRQ4Q&usqp=CAU"
         }
