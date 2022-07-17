@@ -6,13 +6,10 @@ import { Link } from 'react-router-dom'
 
 
 const playListDashboard = (props) => {
-
     const renderPlayCard = props.plays.map((play, i) => {
-        return <PlayCard key={play.id} plays={play} />
+        return <PlayCard key={play.id} plays={play} updatePlayList={props.updatePlayList}/>
     })
 
-    console.log(props)
-    
     return (
         <div>
             <div className="row">
@@ -25,7 +22,8 @@ const playListDashboard = (props) => {
             <div className="row gx-4 gx-lg-5 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
                 {
-                    renderPlayCard
+                   
+                    (props.plays.length>0)? renderPlayCard:"No play list available."
                 }
             </div>
         </div>

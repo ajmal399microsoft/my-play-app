@@ -1,15 +1,15 @@
-import { Container, Dropdown, Table, Button, Row, Col, Form } from "react-bootstrap";
+import { Container, Button, Table, Row, Col, Form } from "react-bootstrap";
 import { GetFormatedDate } from "../helper"
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api/config"
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid"
-import {Toast, ToastContainer} from "react-toastify"
+import { Toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import {ValueNotNull,ReturnValueOrDefaultZeero} from "../helper"
 
 
 function CreatePlay(props) {
-
     const [selectedPlayers, setSelectedPlayers] = useState([])
     const [selectedUserPaid, setSelectedUserPaid] = useState(0)
     const [selectUserId, setSelectUserId] = useState(0)
@@ -41,20 +41,25 @@ function CreatePlay(props) {
 
 
     const addPlayerToTheList = () => {
+        if (playState && playState.playCost <= 0) {
+            alert("Please fill the playcost to proceed.")
+            return false;
+        }
+
         if (selectUserId) {
             let pr = props.players.filter(x => x.id == selectUserId);
-
             if (pr.length > 0) {
+                pr[0].paid = selectedUserPaid;
 
                 let su = selectedPlayers.filter(y => y.id == pr[0].id);
 
                 if (su.length > 0) {
                     alert("User " + pr[0].name + " already added to the list.");
                     return;
-                } else {
-                    setSelectedPlayers([...selectedPlayers, { paid: selectedUserPaid, ...pr[0] }]);
                 }
-
+                else {
+                    setSelectedPlayers([...selectedPlayers, pr[0]]);
+                }
             }
             setSelectUserId(0);
         }
@@ -66,7 +71,6 @@ function CreatePlay(props) {
         setSelectedPlayers(sp);
     }
     const renderTable = selectedPlayers.map((player, i) => {
-
         return <tr key={player.id}>
             <td>{i + 1}</td>
             <td>{player.name}</td>
@@ -86,6 +90,7 @@ function CreatePlay(props) {
             let totalPaidAmount = 0;
             selectedPlayers.map(x => {
                 totalPaidAmount = Number(x.paid) + totalPaidAmount;
+                return x;
             })
             return totalPaidAmount;
         } else {
@@ -136,17 +141,18 @@ function CreatePlay(props) {
         navigate('/');
         // { id: 4, title: "Turf Edavannappara", DateTime: GetFormatedDate(new Date()), cost: 1000, Description: "", Tag: "Paid play", players: players }
         const response = await api.post("/Plays", playObj);
-        console.log(response);
         if (response.status == "200" || response.status == "201") {
             playerList.map(async (player) => {
-                const rp = await api.put(`/Users/${player.id}`, player);
+                await api.put(`/Users/${player.id}`, player);
             })
         }
+        await props.updatePlay();
+        await props.updatePlayerList();
     }
 
     return (
         <div className="border">
-            <ToastContainer/>
+            <ToastContainer />
             <br />
 
             <Container>
@@ -162,7 +168,9 @@ function CreatePlay(props) {
                     <Col>
                         <Form.Control type="number"
                             placeholder="Total play cost"
-                            defaultValue={(props.lastPlay) ? props.lastPlay.cost : 0}
+                            defaultValue={
+                                ReturnValueOrDefaultZeero(props?.lastPlay?.cost)
+                            }
                             onChange={e => { setPlayState({ ...playState, playCost: e.target.value }); }} />
                     </Col>
                     <Col className="col-md-1">
@@ -186,7 +194,7 @@ function CreatePlay(props) {
                     <Col>
                         <Form.Control type="number"
                             placeholder="Paid amount"
-                            defaultValue={selectedUserPaid}
+                            // defaultValue={selectedUserPaid}
                             onChange={e => {
                                 setSelectedUserPaid(e.target.value);
                             }}

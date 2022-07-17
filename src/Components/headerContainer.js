@@ -1,7 +1,8 @@
 import { Toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-import { Button, Container, Navbar, NavbarBrand,Nav } from "react-bootstrap"
+import { Button, Container, Navbar, NavbarBrand, Nav } from "react-bootstrap"
+import { Link } from "react-router-dom"
 
 const HeaderContainer = () => {
 
@@ -11,15 +12,15 @@ const HeaderContainer = () => {
             <ToastContainer />
             <Navbar bg="dark" variant="dark" className="justify-content-center">
                 <Container>
-                   
+
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Add Players</Nav.Link>
-                        <Nav.Link href="#pricing">Add Play Information</Nav.Link>
+                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link href="createuser" >Add Players</Nav.Link>
+                        <Nav.Link href="createplay">Add Play Information</Nav.Link>
                     </Nav>
-                    <Navbar.Brand>
+                    {/* <Navbar.Brand>
                         Turaf players information can handle here.
-                    </Navbar.Brand>
+                    </Navbar.Brand> */}
                 </Container>
             </Navbar>
         </>

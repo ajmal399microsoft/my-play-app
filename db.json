@@ -1,36 +1,4 @@
 {
-  "contacts": [
-    {
-      "id": "ab4402c3-a9b3-4ec5-a45e-ab7fa800a19a",
-      "name": "qweqwe",
-      "email": "qweqwe@gm"
-    },
-    {
-      "id": "f92b23df-2187-429d-af33-7975d65dabfc",
-      "name": "aksmdkas",
-      "email": "asdsad@gmail.com"
-    },
-    {
-      "id": "89652dd2-3af4-44cc-b3a5-1302ae38fb2a",
-      "name": "aksmdkas",
-      "email": "test@gmail.com"
-    },
-    {
-      "id": "1bcde6d8-81c8-4937-b012-74b69b93daa7",
-      "name": "asd",
-      "email": "ajmal@gmail.com"
-    },
-    {
-      "id": "579cfa80-91ef-45a0-975f-3e3dde7f98a6",
-      "name": "asdas",
-      "email": "ajmal@gmail.com"
-    },
-    {
-      "id": "2522010f-47e0-4c5a-b1f0-9889851d6d4d",
-      "name": "aksmdkas",
-      "email": "asdsad@gmail.com"
-    }
-  ],
   "users": [
     {
       "id": "15cb1e44-7670-400b-b6f6-90e4c14e2dba",
@@ -177,16 +145,6 @@
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTShGHX-oKFv4m1zB6zzbOulNAKiQJ53WyYToSBX1wiCC_ls6Q4ozFjC4dzTXzXsq4UJUY&usqp=CAU"
     },
     {
-      "paid": 0,
-      "id": "79a6024b-7228-4f96-a1f2-425ef5711fff",
-      "name": "Ajmal",
-      "balance": -2880,
-      "isAdmin": false,
-      "matchPlayed": 3,
-      "mobNumber": 0,
-      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-b55n6Fujlr_OUgWNWDf5k0dJFeEywRQ4Q&usqp=CAU"
-    },
-    {
       "id": "a572e0d4-2411-44c9-88ce-b89061a13d81",
       "name": "Shaheen",
       "balance": 40,
@@ -203,68 +161,16 @@
       "matchPlayed": 0,
       "mobNumber": 0,
       "imageUrl": "https://i.insider.com/5fd350fae00bce00188bab82?width=1000&format=jpeg&auto=webp"
+    },
+    {
+      "id": "a3b09426-8f05-475e-ae1a-f5243dfbefd9",
+      "name": "Ajmal IK",
+      "balance": 0,
+      "isAdmin": false,
+      "matchPlayed": 0,
+      "mobNumber": 0,
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqAOYR-9kcIw6NhA3Kk7-5itNXBi6GIYS3Im_pkTeFyBM32nqwkkix6WBYnXvKKzDmGKg&usqp=CAU"
     }
   ],
-  "Plays": [
-    {
-      "id": "385ae702-b718-4d31-bd97-62ad53489b9a",
-      "title": "Turf edavannapara",
-      "DateTime": "13-Jul-2022",
-      "cost": "960",
-      "Description": "2022-07-13T12:03:45.558Z",
-      "Tag": "Paid play",
-      "players": [
-        {
-          "paid": 0,
-          "id": "79a6024b-7228-4f96-a1f2-425ef5711fff",
-          "name": "Ajmal",
-          "balance": -960,
-          "isAdmin": false,
-          "matchPlayed": 1,
-          "mobNumber": 0,
-          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-b55n6Fujlr_OUgWNWDf5k0dJFeEywRQ4Q&usqp=CAU"
-        }
-      ]
-    },
-    {
-      "id": "28d3289c-051a-420c-af4c-68efe7a3a517",
-      "title": "Turf edavannapara",
-      "DateTime": "14-Jul-2022",
-      "cost": "960",
-      "Description": "2022-07-14T12:27:48.111Z",
-      "Tag": "Paid play",
-      "players": [
-        {
-          "paid": 0,
-          "id": "79a6024b-7228-4f96-a1f2-425ef5711fff",
-          "name": "Ajmal",
-          "balance": -1920,
-          "isAdmin": false,
-          "matchPlayed": 2,
-          "mobNumber": 0,
-          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-b55n6Fujlr_OUgWNWDf5k0dJFeEywRQ4Q&usqp=CAU"
-        }
-      ]
-    },
-    {
-      "id": "346e723d-e405-4920-81b4-604c41ca82b5",
-      "title": "Turf edavannapara play 3",
-      "DateTime": "15-Jul-2022",
-      "cost": "960",
-      "Description": "2022-07-15T10:56:53.513Z",
-      "Tag": "Paid play",
-      "players": [
-        {
-          "paid": 0,
-          "id": "79a6024b-7228-4f96-a1f2-425ef5711fff",
-          "name": "Ajmal",
-          "balance": -2880,
-          "isAdmin": false,
-          "matchPlayed": 3,
-          "mobNumber": 0,
-          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQp-b55n6Fujlr_OUgWNWDf5k0dJFeEywRQ4Q&usqp=CAU"
-        }
-      ]
-    }
-  ]
+  "Plays": []
 }

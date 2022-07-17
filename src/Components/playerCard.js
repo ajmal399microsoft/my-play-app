@@ -1,14 +1,29 @@
 import React from "react"
-import { Button } from "react-bootstrap"
+import { Button,Col } from "react-bootstrap"
+import api from "../api/config"
 
 const playerCard = (props) => {
 
-    const { name, balance, isAdmin, matchPlayed, imageUrl } = props.player
+    const { id,name, balance, isAdmin, matchPlayed, imageUrl } = props.player
 
+    
+    async function deleteMe(id, name) {
+        if (id) {
+            let text = `Are you sure want to delete the player ${name}?`
+            if (window.confirm(text)) {
+                const response = await api.delete(`/Users/${id}`);
+                if (response.status == "200" || response.status == "201") {
+                    //refresh card
+                     await props.updatePlayerList();
+                }
+            }
+        }
+    }
 
     return (
         <div className="col mb-5">
             <div className="card h-100">
+                <div className="badge bg-dark text-white position-absolute" style={{ cursor: "pointer" }} onClick={(e) => deleteMe(id, name)}><i className="bi-trash"></i></div>
                 <div className="badge bg-dark text-white position-absolute" style={{ "top": "0.5rem", "right": "0.5rem" }}>{(isAdmin) ? "Admin" : "Player"}
                 </div>
                 <img className="card-img-top" src={imageUrl} />
@@ -16,7 +31,7 @@ const playerCard = (props) => {
                     <div className="text-center">
                         <h5 className="fw-bolder">{name}</h5>
                         <div className="d-flex justify-content-center small text-warning mb-2">
-                                Match Played: {matchPlayed}
+                            Match Played: {matchPlayed}
                             {/* <div className="bi-star-fill"></div>
                             <div className="bi-star-fill"></div>
                             <div className="bi-star-fill"></div>

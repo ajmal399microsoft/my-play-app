@@ -5,7 +5,7 @@ import { useNavigate, Link } from "react-router-dom"
 import api from "../api/config"
 
 
-function CreateUser() {
+function CreateUser(props) {
 
     const imageUrls = [
         "https://media.gettyimages.com/photos/cristiano-ronaldo-of-portugal-celebrates-after-scoring-their-sides-picture-id1325105287?s=2048x2048",
@@ -34,8 +34,20 @@ function CreateUser() {
             alert("All fields are mandatory.");
             return;
         }
+
+        let anyUserWithSameName = false;
+        for (var i = 0; i < props.players.length; i++) {
+            if (props.players[i].name == user.name) {
+                anyUserWithSameName = true;
+                break;
+            }
+        }
+        if (anyUserWithSameName) {
+            alert(`The user name: ${user.name} not available, please try with different name.`)
+            return
+        }
+
         const response = await api.post("/Users", user);
-        console.log(response)
         navigate('/');
     }
 
