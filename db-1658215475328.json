@@ -172,5 +172,136 @@
       "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqAOYR-9kcIw6NhA3Kk7-5itNXBi6GIYS3Im_pkTeFyBM32nqwkkix6WBYnXvKKzDmGKg&usqp=CAU"
     }
   ],
-  "Plays": []
+  "Plays": [
+    {
+      "id": "21751e49-c7d6-42d2-a6a3-126fcf877d1b",
+      "title": "Turf edvannapara 15th july",
+      "DateTime": "17-Jul-2022",
+      "cost": "960",
+      "Description": "2022-07-17T16:31:30.757Z",
+      "Tag": "Paid play",
+      "players": [
+        {
+          "id": "a3b09426-8f05-475e-ae1a-f5243dfbefd9",
+          "name": "Ajmal IK",
+          "balance": 20,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqAOYR-9kcIw6NhA3Kk7-5itNXBi6GIYS3Im_pkTeFyBM32nqwkkix6WBYnXvKKzDmGKg&usqp=CAU",
+          "paid": "100"
+        },
+        {
+          "id": "fb855d23-05c4-48ef-957c-b237e0ee5a1f",
+          "name": "Ihsan",
+          "balance": 20,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://i.insider.com/5fd350fae00bce00188bab82?width=1000&format=jpeg&auto=webp",
+          "paid": "100"
+        },
+        {
+          "id": "15cb1e44-7670-400b-b6f6-90e4c14e2dba",
+          "name": "Maniyan",
+          "balance": 100,
+          "isAdmin": false,
+          "matchPlayed": 5,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb10GfAcnCmgGD27E3jwt-IY6HQ3vyu6xxd2SSbm0_oP9yBwWv1egsiSArjoGg5KJ4RzI&usqp=CAU",
+          "paid": "100"
+        },
+        {
+          "id": "1432b39d-cb46-4f7c-8222-94d18a13f8ca",
+          "name": "Vaishnav",
+          "balance": 40,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://media.gettyimages.com/photos/cristiano-ronaldo-of-portugal-celebrates-after-scoring-their-sides-picture-id1325105287?s=2048x2048",
+          "paid": "100"
+        },
+        {
+          "id": "f3060d8a-dbc5-4191-9274-a2d50468b96d",
+          "name": "Navas",
+          "balance": 20,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://i.insider.com/5de52117fd9db21511261fba?width=750&format=jpeg&auto=webp",
+          "paid": "100"
+        },
+        {
+          "id": "8d0b4fee-7fa3-4160-b9db-8d0ff3142458",
+          "name": "Muzammil",
+          "balance": 80,
+          "isAdmin": false,
+          "matchPlayed": 4,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTShGHX-oKFv4m1zB6zzbOulNAKiQJ53WyYToSBX1wiCC_ls6Q4ozFjC4dzTXzXsq4UJUY&usqp=CAU",
+          "paid": "100"
+        },
+        {
+          "id": "332241e3-c964-4e9d-af1d-08fe4323fa27",
+          "name": "Jabir",
+          "balance": 80,
+          "isAdmin": false,
+          "matchPlayed": 4,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb10GfAcnCmgGD27E3jwt-IY6HQ3vyu6xxd2SSbm0_oP9yBwWv1egsiSArjoGg5KJ4RzI&usqp=CAU",
+          "paid": "100"
+        },
+        {
+          "id": "414978fd-2b52-4a0a-aad0-cc6b577ea2ab",
+          "name": "Sadiq",
+          "balance": 100,
+          "isAdmin": false,
+          "matchPlayed": 5,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQib9vTGZfgGFHe3sl17M3FOFmU9YmHgRinslfWc7G2CoHDuRy8ZMeXMU4-MVMzw9k-wyg&usqp=CAU",
+          "paid": "100"
+        },
+        {
+          "id": "a48e8805-3ef8-439f-9e40-588754375126",
+          "name": "Shouka",
+          "balance": 40,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQib9vTGZfgGFHe3sl17M3FOFmU9YmHgRinslfWc7G2CoHDuRy8ZMeXMU4-MVMzw9k-wyg&usqp=CAU",
+          "paid": "100"
+        },
+        {
+          "id": "ad44925e-c1a7-423c-9170-e213e9eadddf",
+          "name": "Yasar",
+          "balance": 20,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://media.gettyimages.com/photos/cristiano-ronaldo-of-portugal-celebrates-after-scoring-their-sides-picture-id1325105287?s=2048x2048",
+          "paid": "100"
+        },
+        {
+          "id": "d08a95a9-5578-4799-bda6-3d9014e4a301",
+          "name": "Sidhiq",
+          "balance": 40,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://i.insider.com/5fd350fae00bce00188bab82?width=1000&format=jpeg&auto=webp",
+          "paid": "100"
+        },
+        {
+          "id": "178c1be8-c3df-4bfa-ae13-2fe207f37abf",
+          "name": "Shabeer",
+          "balance": 20,
+          "isAdmin": false,
+          "matchPlayed": 1,
+          "mobNumber": 0,
+          "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb10GfAcnCmgGD27E3jwt-IY6HQ3vyu6xxd2SSbm0_oP9yBwWv1egsiSArjoGg5KJ4RzI&usqp=CAU",
+          "paid": "100"
+        }
+      ]
+    }
+  ]
 }

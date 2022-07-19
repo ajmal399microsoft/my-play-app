@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import 'bootstrap-icons/font/bootstrap-icons.css';
+// import '.../db.json'
 
 import React, { useState, useEffect } from "react";
 import { Container } from 'react-bootstrap'
@@ -12,6 +13,7 @@ import HeaderContainer from "./headerContainer";
 const MainContainer = () => {
     const [players, setPlayers] = useState([]);
     const [plays, setPlay] = useState([]);
+    const [allJsonData,setAllJson]=useState([])
 
     //Retrieve contacts
     const retrieveUsers = async () => {
@@ -47,14 +49,37 @@ const MainContainer = () => {
         
         updatePlayerList();
         updatePlayList();
+        setAllJsonObject();
     }, [])
 
-
+    const setAllJsonObject=()=>{
+        fetch('db.json'
+        ,{
+          headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+           }
+        }
+        )
+          .then(function(response){
+            return response.json();
+          })
+          .then(function(myJson) {
+            setAllJson(myJson)
+          });
+      }
+   
     return (
         <>
             <BrowserRouter>
                 <Container>
                     <HeaderContainer></HeaderContainer>
+                    <a href={`data:text/json;charset=utf-8,${encodeURIComponent(
+              JSON.stringify(allJsonData)
+            )}`}
+                        download="filename.json">
+                        {`Download Json`}
+                    </a>
                     <Routes>
 
                         <Route path="/" element={

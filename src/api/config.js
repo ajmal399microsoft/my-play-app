@@ -4,7 +4,7 @@ import axios from "axios"
 //     baseURL:"http://localhost:5000"
 // })
 
-//Prod heroku
+// Prod heroku
 export default axios.create({
     baseURL:"https://my-play-app-ajm.herokuapp.com"
 })
