@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Form, Row, Button, FormLabel } from "react-bootstrap";
 import { v4 as uuid } from "uuid"
 import { useNavigate, Link } from "react-router-dom"
-import api from "../api/config"
+import {saveUser as insetUser}  from "../api/usersData"
 
 
 function CreateUser(props) {
@@ -47,8 +47,13 @@ function CreateUser(props) {
             return
         }
 
-        const response = await api.post("/Users", user);
-        navigate('/');
+        // const response = await api.post("/Users", user);
+        const response=insetUser({id:uuid(),...user});
+        if(response){
+            navigate('/');
+        }else{
+            alert("Some error occured please try again");
+        }
     }
 
     return (

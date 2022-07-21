@@ -1,0 +1,19 @@
+
+Github commit:
+-------------------
+git init
+git add -A
+git commit -m 'Added my project'
+git remote add origin git@github.com:sammy/my-new-project.git
+git push -u -f origin main
+
+
+
+Run json server:
+-----------------
+npm run server
+executing this line from package .json//// "server": "json-server --watch ./public/db.json --port 5000"
+
+Run react app:
+----------------
+npm start

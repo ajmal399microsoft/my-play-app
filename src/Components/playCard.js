@@ -1,6 +1,6 @@
 import React from "react"
 import { Button, Col } from "react-bootstrap"
-import api from "../api/config"
+import { DeletePlay } from "../api/playsData";
 
 const playCard = (props) => {
     const { id, title, DateTime, cost, Description, Tag, players } = props.plays;
@@ -17,9 +17,16 @@ const playCard = (props) => {
         if (id) {
             let text = `Are you sure want to delete play on ${dateTime}?`
             if (window.confirm(text)) {
-                const response = await api.delete(`/Plays/${id}`);
-                if (response.status == "200" || response.status == "201") {
+                // const response = await api.delete(`/Plays/${id}`);
+                // if (response.status == "200" || response.status == "201") {
+                //     //refresh card
+                //      await props.updatePlayList();
+                // }
+
+                const response = DeletePlay(id);
+                if (response) {
                     //refresh card
+                    console.log(response)
                      await props.updatePlayList();
                 }
             }

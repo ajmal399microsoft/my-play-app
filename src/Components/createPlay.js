@@ -1,12 +1,14 @@
 import { Container, Button, Table, Row, Col, Form } from "react-bootstrap";
 import { GetFormatedDate } from "../helper"
 import { Link, useNavigate } from "react-router-dom";
-import api from "../api/config"
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import { v4 as uuid } from "uuid"
 import { Toast, ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-import {ValueNotNull,ReturnValueOrDefaultZeero} from "../helper"
+import { ValueNotNull, ReturnValueOrDefaultZeero } from "../helper"
+import { savePlayInformation as InserPlay } from "../api/playsData"
+import {UpdateUser} from "../api/usersData"
+
 
 
 function CreatePlay(props) {
@@ -139,11 +141,17 @@ function CreatePlay(props) {
         }
 
         navigate('/');
-        // { id: 4, title: "Turf Edavannappara", DateTime: GetFormatedDate(new Date()), cost: 1000, Description: "", Tag: "Paid play", players: players }
-        const response = await api.post("/Plays", playObj);
-        if (response.status == "200" || response.status == "201") {
+        // const response = await api.post("/Plays", playObj);
+        // if (response.status == "200" || response.status == "201") {
+        //     playerList.map(async (player) => {
+        //         await api.put(`/Users/${player.id}`, player);
+        //     })
+        // }
+
+        const response = InserPlay(playObj);
+        if (response) {
             playerList.map(async (player) => {
-                await api.put(`/Users/${player.id}`, player);
+                UpdateUser(player);
             })
         }
         await props.updatePlay();

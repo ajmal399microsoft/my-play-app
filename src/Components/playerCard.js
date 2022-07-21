@@ -1,20 +1,27 @@
 import React from "react"
-import { Button,Col } from "react-bootstrap"
-import api from "../api/config"
+import { Link } from "react-router-dom"
+import { DeleteUser } from "../api/usersData"
 
 const playerCard = (props) => {
 
-    const { id,name, balance, isAdmin, matchPlayed, imageUrl } = props.player
+    const { id, name, balance, isAdmin, matchPlayed, imageUrl } = props.player
 
-    
+
     async function deleteMe(id, name) {
         if (id) {
             let text = `Are you sure want to delete the player ${name}?`
             if (window.confirm(text)) {
-                const response = await api.delete(`/Users/${id}`);
-                if (response.status == "200" || response.status == "201") {
-                    //refresh card
-                     await props.updatePlayerList();
+                // const response = await api.delete(`/Users/${id}`);
+                // if (response.status == "200" || response.status == "201") {
+                //     //refresh card
+                //      await props.updatePlayerList();
+                // }
+
+                const response = DeleteUser(id);
+                if (response) {
+                    await props.updatePlayerList();
+                } else {
+                    alert("Could not delete the user, please try again.");
                 }
             }
         }
@@ -24,6 +31,7 @@ const playerCard = (props) => {
         <div className="col mb-5">
             <div className="card h-100">
                 <div className="badge bg-dark text-white position-absolute" style={{ cursor: "pointer" }} onClick={(e) => deleteMe(id, name)}><i className="bi-trash"></i></div>
+                {/* <div className="badge bg-dark text-white position-absolute" style={{ cursor: "pointer","top": "0.5rem", "left": "0.5rem" }} onClick={(e) => deleteMe(id, name)}><i className="bi bi-pencil"></i></div> */}
                 <div className="badge bg-dark text-white position-absolute" style={{ "top": "0.5rem", "right": "0.5rem" }}>{(isAdmin) ? "Admin" : "Player"}
                 </div>
                 <img className="card-img-top" src={imageUrl} />
@@ -42,7 +50,11 @@ const playerCard = (props) => {
                     </div>
                 </div>
                 <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                    <div className="text-center"><a className="btn btn-outline-dark mt-auto" href="#">Details</a></div>
+                    <div className="text-center">
+                        <Link to={{ pathname: `/editplayer/${id}`, state: { player: props.player } }} state={{ data: props.player }}>
+                            <a className="btn btn-outline-dark mt-auto" href="#">Details</a>
+                        </Link>
+                    </div>
                 </div>
                 {/* <Button bsStyle="link">Link</Button>    */}
             </div>

@@ -10,29 +10,43 @@ import Dashboard from "./dashboard"
 import CreateUser from "./createUser"
 import api from "../api/config"
 import HeaderContainer from "./headerContainer";
+import { getAllUsers } from "../api/usersData";
+import {getAllPlayInformation} from "../api/playsData"
+import EditPlayer from "./editPlayer";
+
 const MainContainer = () => {
     const [players, setPlayers] = useState([]);
     const [plays, setPlay] = useState([]);
-    const [allJsonData,setAllJson]=useState([])
+    // const [allJsonData,setAllJson]=useState([])
 
     //Retrieve contacts
     const retrieveUsers = async () => {
-        const response = await api.get("/users");
-        return response.data;
+        // const response = await api.get("/users");
+        // return response.data;
+
+        const retrieveusers = getAllUsers();
+        return retrieveusers;
     }
 
     //Retrieve plays
     const retrievePlayList = async () => {
-        const response = await api.get("/plays");
-        if (response.data) {
-            return response.data.sort(function (a, b) {
+        // const response = await api.get("/plays");
+        // if (response.data) {
+        //     return response.data.sort(function (a, b) {
+        //         return new Date(b.DateTime) - new Date(a.DateTime);
+        //     })
+        // }
+        const retrievePlays = getAllPlayInformation();
+
+        if (retrievePlays) {
+            return retrievePlays.sort(function (a, b) {
                 return new Date(b.DateTime) - new Date(a.DateTime);
             })
         }
     }
 
     const updatePlayList = async () => {
-        const playList = await retrievePlayList();
+         const playList = await retrievePlayList();
 
         if (playList)
             setPlay(playList);
@@ -49,37 +63,37 @@ const MainContainer = () => {
         
         updatePlayerList();
         updatePlayList();
-        setAllJsonObject();
+        // setAllJsonObject();
     }, [])
 
-    const setAllJsonObject=()=>{
-        fetch('db.json'
-        ,{
-          headers : { 
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-           }
-        }
-        )
-          .then(function(response){
-            return response.json();
-          })
-          .then(function(myJson) {
-            setAllJson(myJson)
-          });
-      }
+    // const setAllJsonObject=()=>{
+    //     fetch('db.json'
+    //     ,{
+    //       headers : { 
+    //         'Content-Type': 'application/json',
+    //         'Accept': 'application/json'
+    //        }
+    //     }
+    //     )
+    //       .then(function(response){
+    //         return response.json();
+    //       })
+    //       .then(function(myJson) {
+    //         setAllJson(myJson)
+    //       });
+    //   }
    
     return (
         <>
             <BrowserRouter>
                 <Container>
                     <HeaderContainer></HeaderContainer>
-                    <a href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                    {/* <a href={`data:text/json;charset=utf-8,${encodeURIComponent(
               JSON.stringify(allJsonData)
             )}`}
                         download="filename.json">
                         {`Download Json`}
-                    </a>
+                    </a> */}
                     <Routes>
 
                         <Route path="/" element={
@@ -100,6 +114,7 @@ const MainContainer = () => {
                                 <CreateUser players={players} />
                             </div>
                         } />
+                        <Route path="/editplayer/:id" element={<EditPlayer players={players}/>} />
 
                     </Routes>
                 </Container>
