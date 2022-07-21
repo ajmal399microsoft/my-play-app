@@ -3,12 +3,15 @@ import React from "react"
 import PlayerCard from "./playerCard"
 import {Row, Button} from "react-bootstrap"
 import {Link} from "react-router-dom"
+import PlayerTable from "./playerTable"
 
 const playerDashboard = (props) => {
 
     const renderPlayerCard = props.players.map((player, i) => {
         return <PlayerCard key={player.id} player={player} updatePlayerList={props.updatePlayerList} />
     })
+
+
 
     return (
         <div>
@@ -19,6 +22,11 @@ const playerDashboard = (props) => {
                     </Link>
                 </div>
             </Row>
+            <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                
+                    <PlayerTable players={props.players}></PlayerTable>
+                
+            </div>
             <div className="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 {
                     renderPlayerCard
